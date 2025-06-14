@@ -21,7 +21,13 @@ const eslintConfig = [
 				}],
 			'comma-dangle': ['error', 'never'],
 			'quotes': ['error', 'single'],
-			'indent': ['error', 'tab']
+			'indent': ['error', 'tab'],
+			//Ошибка, если используется конкатенация строк вместо шаблонных литералов.
+			'prefer-template': ['error'],
+			//Ошибка, если в качестве коллбека используется не стрелочная функция.
+			'prefer-arrow-callback': ['error'],
+			//Ошибка, если в одном из ветвлений функция возвращает значение, а в другом нет.
+			'consistent-return': 'error'
 		}
 	}
 ];
