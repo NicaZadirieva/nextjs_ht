@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "stylelint": "stylelint '**/*{.css,.scss}'",
-    "stylelint:fix": "stylelint '**/*{.css,.scss}' --fix"
+    "stylelint:fix": "stylelint '**/*{.css,.scss}' --fix",
+    "debug": "cross-env NODE_OPTIONS='--inspect' next dev"
   },
   "dependencies": {
     "next": "15.3.3",
@@ -21,6 +22,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^7.0.3",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
     "stylelint": "^16.20.0",
