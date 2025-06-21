@@ -1,6 +1,18 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import styles from './page.module.css';
 
+// export const metadata: Metadata = {
+// 	title: 'Исправленные данные',
+// 	description: 'Мой текст'
+// };
+
+export async function generateMetadata() : Promise<Metadata>{
+	// fetch request
+	return {
+		title: 'ComputedMetadata'
+	};
+}
 export default function Home() {
 	return (
 		<div className={styles.page}>
