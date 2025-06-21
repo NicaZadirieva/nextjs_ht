@@ -10,6 +10,25 @@
     "rules": {
         "color-hex-length": "long",
         "@stylistic/color-hex-case": "upper",
-        "@stylistic/indentation": "tab"
+        "@stylistic/indentation": "tab",
+        "order/properties-order": [
+            {
+                "groupName": "dimensions",
+                "emptyLineBefore": "always",
+                "properties": [
+                    "height",
+                    "width"
+                ]
+            },
+            {
+                "groupName": "font",
+                "emptyLineBefore": "always",
+                "properties": [
+                    "font-family",
+                    "font-size",
+                    "font-weight"
+                ]
+            }
+        ]
     }
 }
