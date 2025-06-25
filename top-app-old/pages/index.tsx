@@ -1,4 +1,4 @@
-import { HTag } from '@/components';
+import { Button, HTag } from '@/components';
 import Head from 'next/head';
 
 
@@ -12,5 +12,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<HTag tag="h1">Текст</HTag>
+			<Button appearance='primary'>Кнопка</Button>
+			<Button appearance='ghost'>Кнопка</Button>
 		</>);
 }
