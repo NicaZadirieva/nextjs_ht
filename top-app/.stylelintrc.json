@@ -13,6 +13,25 @@
         "@stylistic/indentation": "tab",
         "order/properties-order": [
             {
+                "groupName": "cursor",
+                "emptyLineBefore": "always",
+                "properties": [
+                    "cursor"
+                ]
+            },
+            {
+                "groupName": "border",
+                "emptyLineBefore": "always",
+                "properties": [
+                    "border",
+                    "border-radius",
+                    "border-left",
+                    "border-right",
+                    "border-bottom",
+                    "border-top"
+                ]
+            },
+            {
                 "groupName": "dimensions",
                 "emptyLineBefore": "always",
                 "properties": [
