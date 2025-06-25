@@ -1,3 +1,4 @@
+import { HTag } from '@/components';
 import { Metadata } from 'next';
 
 
@@ -14,8 +15,8 @@ export async function generateMetadata() : Promise<Metadata>{
 }
 export default function Home() {
 	return (
-		<div>
+		<HTag tag="h1">
 			Text
-		</div>
+		</HTag>
 	);
 }

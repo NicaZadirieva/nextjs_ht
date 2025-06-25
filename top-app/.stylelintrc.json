@@ -21,12 +21,23 @@
                 ]
             },
             {
+                "groupName": "margins",
+                "emptyLineBefore": "always",
+                "properties": [
+                    "margin",
+                    "padding"
+                ]
+            },
+            {
                 "groupName": "font",
                 "emptyLineBefore": "always",
                 "properties": [
+                    "font",
                     "font-family",
                     "font-size",
-                    "font-weight"
+                    "font-weight",
+                    "line-height",
+                    "letter-spacing"
                 ]
             }
         ]
