@@ -12,7 +12,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<HTag tag="h1">Текст</HTag>
-			<Button appearance='primary'>Кнопка</Button>
+			<Button arrow='down' appearance='primary'>Кнопка</Button>
 			<Button appearance='ghost'>Кнопка</Button>
 		</>);
 }
