@@ -1,4 +1,4 @@
-import { HTag } from '@/components';
+import { Button, HTag } from '@/components';
 import { Metadata } from 'next';
 
 
@@ -14,9 +14,13 @@ export async function generateMetadata() : Promise<Metadata>{
 	};
 }
 export default function Home() {
-	return (
+	return (<>
+		<Button appearance='primary'>Кнопка</Button>
+		<Button appearance='ghost'>Кнопка</Button>
+
 		<HTag tag="h1">
 			Text
 		</HTag>
+	</>
 	);
 }
