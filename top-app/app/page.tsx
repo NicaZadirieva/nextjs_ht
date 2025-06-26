@@ -1,6 +1,6 @@
 import { Button, HTag } from '@/components';
 import { Metadata } from 'next';
-
+import Arrow from './arrow.svg';
 
 // export const metadata: Metadata = {
 // 	title: 'Исправленные данные',
@@ -21,6 +21,7 @@ export default function Home() {
 		<HTag tag="h1">
 			Text
 		</HTag>
+		<span><Arrow /></span>
 	</>
 	);
 }
