@@ -13,6 +13,14 @@
         "@stylistic/indentation": "tab",
         "order/properties-order": [
             {
+                "groupName": "display",
+                "emptyLineBefore": "always",
+                "properties": [
+                    "display",
+                    "box-sizing"
+                ]
+            },
+            {
                 "groupName": "cursor",
                 "emptyLineBefore": "always",
                 "properties": [
@@ -44,7 +52,15 @@
                 "emptyLineBefore": "always",
                 "properties": [
                     "margin",
-                    "padding"
+                    "margin-right",
+                    "margin-left",
+                    "margin-top",
+                    "margin-bottom",
+                    "padding",
+                    "padding-right",
+                    "padding-left",
+                    "padding-top",
+                    "padding-bottom"
                 ]
             },
             {
