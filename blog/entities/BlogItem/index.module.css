@@ -2,14 +2,14 @@
 	display: flex;
 	box-sizing: border-box;
 
-	background: rgb(255 255 255); /* TODO: вынести в переменную */
+	background: var(--white);
 
-	border: 1px solid rgb(245 245 245); /* TODO: вынести в переменную */
+	border: 1px solid var(--grey-light);
 	border-radius: 5px;
 
 	
 
-	width: 350px; /** TODO: подумать нужен ли width и height */
+	width: 350px;
 
 	padding: 10px;
 
@@ -42,11 +42,10 @@
 	margin-bottom: auto;
 	gap: 2px;
 
-	/* TODO: вынести в переменные */
 	
 	font-size: 12px;
 	font-weight: 400;
-	color: rgb(110 110 110);
+	color: var(--grey-middle);
 	flex-direction: row;
 	align-items: center;
 }
@@ -59,16 +58,15 @@
 }
 
 .tag {
-	color: rgb(75 75 75); /* TODO: вынести в переменные */
+	color: var(--grey-dark);
 
-	/* TODO: добавить шрифт font-family: "SF Pro Text"; */
 	font-size: 12px;
 	font-weight: 500;
 	line-height: 14px;
 }
 
 .created-at {
-	color: rgb(110 110 110); /* TODO: вынести в переменные */
+	color: var(--grey-middle);
 
 	font-size: 12px;
 	font-weight: 500;
@@ -98,7 +96,7 @@
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 21px;
-	color: rgb(110 110 110);
+	color: var(--grey-middle);
 }
 
 .footer {
@@ -109,7 +107,7 @@
 }
 
 .read-time {
-	color: rgb(110 110 110);
+	color: var(--grey-middle);
 
 	font-size: 12px;
 	font-weight: 500;
@@ -122,7 +120,7 @@
 	padding: 0;
 
 	text-decoration: none;
-	color: rgb(110 110 110);
+	color: var(--grey-middle);
 	transition: .2s all;
 	flex-direction: row;
 	align-items: center;
@@ -134,5 +132,5 @@
 }
 
 .post-link:hover {
-	color: rgb(20 115 230);
+	color: var(--blue);
 }
