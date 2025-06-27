@@ -4,6 +4,7 @@ import { BlogItemProps } from './BlogItem.props';
 import ArrowIcon from './icon/icon_arrow.svg';
 import LikeIcon from './icon/like-post-icon.svg';
 import styles from './index.module.css';
+import { daysBetweenNow } from './utils/DateUtil';
 
 export const BlogItem = ({className, text, likeCounter = 0, tag, createdAt, title, readTime, postLink, mainPhotoLink, ...props}: BlogItemProps) => {
 	return (
@@ -16,7 +17,7 @@ export const BlogItem = ({className, text, likeCounter = 0, tag, createdAt, titl
 					</span>
 					<span>·</span>
 					<span className={styles['created-at']}>
-						{createdAt.getDate() /**TODO: здесь сделать разницу между текущим временем и датой создания */}
+						{daysBetweenNow(createdAt) } days
 					</span>
 					<div className={styles.like}>
 						<span>{likeCounter}</span>

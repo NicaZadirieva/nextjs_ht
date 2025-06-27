@@ -5,7 +5,7 @@ export default function Home() {
 		<div>
 			<BlogItem 
 				text="The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning." 
-				createdAt={new Date()}
+				createdAt={new Date('2021-09-25')}
 				tag='Frontend'
 				title="Css Grid"
 				readTime="3 Min Read"
