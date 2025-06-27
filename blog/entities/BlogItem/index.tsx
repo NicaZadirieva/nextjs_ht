@@ -1,6 +1,8 @@
 import { BlogImage } from '@/feature/BlogImage';
 import cn from 'classnames';
 import { BlogItemProps } from './BlogItem.props';
+import ArrowIcon from './icon/icon_arrow.svg';
+import LikeIcon from './icon/like-post-icon.svg';
 import styles from './index.module.css';
 
 export const BlogItem = ({className, text, likeCounter = 0, tag, createdAt, title, readTime, postLink, mainPhotoLink, ...props}: BlogItemProps) => {
@@ -17,8 +19,8 @@ export const BlogItem = ({className, text, likeCounter = 0, tag, createdAt, titl
 						{createdAt.getDate() /**TODO: здесь сделать разницу между текущим временем и датой создания */}
 					</span>
 					<div className={styles.like}>
-						{likeCounter}
-						{/**Здесь вставить svg */}
+						<span>{likeCounter}</span>
+						<LikeIcon/>
 					</div>
 				</header>
 
@@ -33,7 +35,7 @@ export const BlogItem = ({className, text, likeCounter = 0, tag, createdAt, titl
 					</span>
 
 					<a className={styles['post-link']} href={postLink}>Read Full
-						{/**вставить svg иконку */}
+						<ArrowIcon/>
 					</a>
 				</footer>
 			</div>

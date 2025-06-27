@@ -36,14 +36,26 @@
 }
 
 .like {
+	display: flex;
+
 	margin-left: auto;
+	margin-bottom: auto;
+	gap: 2px;
 
 	/* TODO: вынести в переменные */
 	
 	font-size: 12px;
 	font-weight: 400;
-	line-height: 16px;
 	color: rgb(110 110 110);
+	flex-direction: row;
+	align-items: center;
+}
+
+.like svg {
+	display: block;
+
+	height: 16px;
+	width: 16px;
 }
 
 .tag {
@@ -104,12 +116,21 @@
 }
 
 .post-link {
+	display: flex;
+
 	margin: 0;
 	padding: 0;
 
 	text-decoration: none;
 	color: rgb(110 110 110);
 	transition: .2s all;
+	flex-direction: row;
+	align-items: center;
+}
+
+.post-link svg {
+	height: 20px;
+	width: 20px;
 }
 
 .post-link:hover {
