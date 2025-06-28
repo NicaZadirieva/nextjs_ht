@@ -1,4 +1,4 @@
-import { Button, HTag, Paragraph, Tag } from '@/components';
+import { Button, HTag, Paragraph, Rating, Tag } from '@/components';
 import { Metadata } from 'next';
 import Arrow from './arrow.svg';
 
@@ -29,6 +29,7 @@ export default function Home() {
 		<Tag size='m' color='red'>Red</Tag>
 		<Tag size='s' color='primary'>primary</Tag>
 		<Paragraph size='l'>Выше указаны программы Adobe InDesign, Adobe Illustrator, Corel Draw и ими можно успешно пользоваться дома или в дороге. Современные ноутбуки хорошо справляются с нагрузкой, так зачем загонять специалиста в душный офис. В этой профессии важным считается вдохновение, поэтому дизайнеры ищут его в разных местах.</Paragraph>
+		<Rating rating={4}/>
 	</>
 	);
 }
