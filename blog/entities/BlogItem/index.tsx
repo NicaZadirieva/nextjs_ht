@@ -1,28 +1,19 @@
-import { BlogImage } from '@/feature/BlogImage';
+import { BlogCreatedAt, BlogImage, BlogLike, BlogReadTime, BlogTag } from '@/feature';
 import cn from 'classnames';
 import { BlogItemProps } from './BlogItem.props';
 import ArrowIcon from './icon/icon_arrow.svg';
-import LikeIcon from './icon/like-post-icon.svg';
 import styles from './index.module.css';
-import { daysBetweenNow } from './utils/DateUtil';
 
-export const BlogItem = ({className, text, likeCounter = 0, tag, createdAt, title, readTime, postLink, mainPhotoLink, ...props}: BlogItemProps) => {
+export const BlogItem = ({className, text, likeCounter, tag, createdAt, title, readTime, postLink, mainPhotoLink, ...props}: BlogItemProps) => {
 	return (
 		<div {...props} className={cn(styles.card, className)}>
 			<BlogImage mainPhotoLink={mainPhotoLink}/>
 			<div className={styles.content}>
 				<header className={styles.header}>
-					<span className={styles.tag}>
-						{tag}
-					</span>
+					<BlogTag tag={tag}/>
 					<span>·</span>
-					<span className={styles['created-at']}>
-						{daysBetweenNow(createdAt) } days
-					</span>
-					<div className={styles.like}>
-						<span>{likeCounter}</span>
-						<LikeIcon/>
-					</div>
+					<BlogCreatedAt createdAt={createdAt} />
+					<BlogLike likeCounter={likeCounter}/>
 				</header>
 
 				<main className={styles.main}>
@@ -31,9 +22,7 @@ export const BlogItem = ({className, text, likeCounter = 0, tag, createdAt, titl
 				</main>
 
 				<footer className={styles.footer}>
-					<span className={styles['read-time']}>
-						{readTime}
-					</span>
+					<BlogReadTime readTime={readTime}/>
 
 					<a className={styles['post-link']} href={postLink}>Read Full
 						<ArrowIcon/>

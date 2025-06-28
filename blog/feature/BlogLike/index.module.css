@@ -1,0 +1,21 @@
+.like {
+	display: flex;
+
+	margin-left: auto;
+	margin-bottom: auto;
+	gap: 2px;
+
+
+	font-size: 12px;
+	font-weight: 400;
+	color: var(--grey-middle);
+	flex-direction: row;
+	align-items: center;
+}
+
+.like svg {
+	display: block;
+
+	height: 16px;
+	width: 16px;
+}
