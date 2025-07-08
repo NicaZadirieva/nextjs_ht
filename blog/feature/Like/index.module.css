@@ -1,0 +1,21 @@
+.like-box { 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	box-sizing: border-box;
+	width: 48px;
+	height: 48px;
+	padding: 16px;
+	border: 1px solid var(--like-primary-stroke);
+	border-radius: 50%;
+}
+
+.liked-box {
+	border: none;
+	background: var(--like-primary-stroke);
+}
+
+.liked-box svg {
+	stroke: var(--white);
+}
