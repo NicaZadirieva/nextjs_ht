@@ -1,5 +1,4 @@
 import { BlogItem } from '@/entities';
-import { BlogPost } from '@/entities/BlogPost';
 
 export default function Home() {
 	return (
@@ -13,7 +12,7 @@ export default function Home() {
 				postLink="google.com"
 				mainPhotoLink='/Blog/blogPost.jpg'/>
 
-			<BlogPost/>
+			
 		</div>
 	);
 }

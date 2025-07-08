@@ -1,5 +1,5 @@
 import './globals.css';
-import { localFontImport } from './shared/importFont';
+import { Header, localFontImport } from './shared';
 
 export default function RootLayout({
 	children
@@ -8,7 +8,8 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className={localFontImport.className}>
-			<body>
+			<body className="container">
+				<Header/>
 				{children}
 			</body>
 		</html>
