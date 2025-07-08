@@ -9,6 +9,13 @@
 	padding: 16px;
 	border: 1px solid var(--like-primary-stroke);
 	border-radius: 50%;
+
+	transition: .3s all;
+}
+
+.like-box svg {
+	stroke: var(--like-primary-stroke);
+	transition: .3s all;
 }
 
 .liked-box {

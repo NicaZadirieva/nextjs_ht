@@ -4,4 +4,6 @@ export interface LikeProps extends DetailedHTMLProps<HtmlHTMLAttributes<HTMLDivE
     width: number;
     height: number;
     liked: boolean;
+
+    updateLike: (newLike: boolean) =>  void;
 }

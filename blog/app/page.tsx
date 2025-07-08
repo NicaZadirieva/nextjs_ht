@@ -1,5 +1,5 @@
 import { BlogItem } from '@/entities';
-import { Like } from '@/feature';
+import { BlogPost } from '@/entities/BlogPost';
 
 export default function Home() {
 	return (
@@ -13,7 +13,7 @@ export default function Home() {
 				postLink="google.com"
 				mainPhotoLink='/Blog/blogPost.jpg'/>
 
-			<Like width={20} height={20} liked={true}/>
+			<BlogPost/>
 		</div>
 	);
 }
