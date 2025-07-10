@@ -1,6 +1,5 @@
-import type { MenuItem } from '@/interfaces/menu.interface';
+import { getMenu } from '@/api/menu';
 import { Metadata } from 'next';
-import { API } from '../api';
 
 // export const metadata: Metadata = {
 // 	title: 'Исправленные данные',
@@ -15,16 +14,6 @@ export async function generateMetadata() : Promise<Metadata>{
 }
 
 
-async function getMenu(firstCategory: number): Promise<MenuItem[]> {
-	const res = await fetch(API.topPage.find, {
-		method: 'POST',
-		body: JSON.stringify({
-			firstCategory
-		}),
-		headers: { 'Content-Type': 'application/json' }
-	});
-	return res.json();
-}
 export default async function Home() {
 	const menu = await getMenu(1);
 	return (<main>
