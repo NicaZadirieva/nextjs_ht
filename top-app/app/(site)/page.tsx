@@ -1,5 +1,5 @@
-import { getMenu } from '@/api/menu';
 import { Metadata } from 'next';
+import Menu from './components/Menu';
 
 // export const metadata: Metadata = {
 // 	title: 'Исправленные данные',
@@ -15,12 +15,9 @@ export async function generateMetadata() : Promise<Metadata>{
 
 
 export default async function Home() {
-	const menu = await getMenu(1);
 	return (<main>
 		Главная
-		<div>
-			<div>{JSON.stringify(menu)}</div>
-		</div>
+		<Menu/>
 	</main>
 	);
 }
