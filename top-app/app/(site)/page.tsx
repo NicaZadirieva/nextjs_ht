@@ -1,6 +1,6 @@
-import { Button, HTag, Paragraph, Rating, Tag } from '@/components';
 import { Metadata } from 'next';
 import Arrow from './arrow.svg';
+import { Button, HTag, Paragraph, Rating, Tag } from './components';
 
 // export const metadata: Metadata = {
 // 	title: 'Исправленные данные',
