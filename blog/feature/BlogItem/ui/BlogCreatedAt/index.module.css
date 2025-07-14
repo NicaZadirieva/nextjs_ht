@@ -1,7 +1,6 @@
 .created-at {
-	color: var(--grey-middle);
-
 	font-size: 12px;
 	font-weight: 500;
 	line-height: 14px;
+	color: var(--grey-middle);
 }

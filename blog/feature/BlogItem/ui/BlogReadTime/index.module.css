@@ -1,6 +1,5 @@
 .read-time {
-	color: var(--grey-middle);
-
 	font-size: 12px;
 	font-weight: 500;
+	color: var(--grey-middle);
 }

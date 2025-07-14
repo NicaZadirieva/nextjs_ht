@@ -4,4 +4,25 @@
 	--grey-middle: rgb(110 110 110);
 	--grey-dark: rgb(75 75 75);
 	--blue: rgb(20 115 230);
+	--like-primary-stroke: rgb(48 48 48);
+}
+
+.container {
+	box-sizing: border-box;
+	max-width: 1205px;
+	margin: 0 auto;
+	padding-right: 10px;
+	padding-left: 10px; 
+}
+
+.blog-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	gap: 33px;
+}
+
+/* сброс стилей */
+body, header, h1 {
+	margin: 0;
+	padding: 0;
 }
