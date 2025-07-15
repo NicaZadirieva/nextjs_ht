@@ -1,4 +1,5 @@
-// TODO: нужно заменить на любой другой с получением постов
+import axios from 'axios';
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function patchRequestUpdateLike(newLikeState: boolean, postId: number) {
 	// данный запрос закомментировала, так как присылает ошибку. всегда
@@ -15,5 +16,5 @@ export async function patchRequestUpdateLike(newLikeState: boolean, postId: numb
 }
 
 async function testSuccessfulRequest() {
-	return Promise.resolve();
+	return axios.get('https://jsonplaceholder.typicode.com/posts');
 }
