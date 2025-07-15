@@ -1,22 +1,39 @@
 import { BlogItem } from '@/entities';
-function generateBlogItems() {
-	return new Array(15).fill(0).map((val, i) => {
+
+interface BlogItemResponse {
+	title: string;
+	body: string;
+	id: number;
+}
+async function generateBlogItems() {
+	const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+		next: {
+			revalidate: 10
+		}
+	}
+	);
+	if (!res.ok) {
+		return null;
+	}
+	const data = await res.json();
+	
+	return data.map((d: BlogItemResponse) => {
 		return (<BlogItem
-			key={i}
-			text="The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning."
+			key={d.id}
+			text={d.body}
 			createdAt={new Date('2021-09-25')}
 			tag='Frontend'
-			title="Css Grid"
+			title={d.title}
 			readTime="3 Min Read"
 			postLink="google.com"
 			mainPhotoLink='/Blog/blogPost.jpg' />);
 	});
 }
-export default function Home() {
+export default async function Home() {
 	return (
 		<div className='blog'>
 			{
-				generateBlogItems()
+				await generateBlogItems()
 			}
 		</div>
 	);
