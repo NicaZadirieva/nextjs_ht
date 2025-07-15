@@ -5,8 +5,6 @@
 	align-items: center;
 
 	box-sizing: border-box;
-
-	/* width: 350px; */
 	padding: 10px;
 	border: 1px solid var(--grey-light);
 	border-radius: 5px;

@@ -7,6 +7,16 @@
 	--like-primary-stroke: rgb(48 48 48);
 }
 
+/* сброс стилей */
+body,
+header,
+h1 {
+	margin: 0;
+	padding: 0;
+}
+
+/* end сброс стилей */
+
 .container {
 	box-sizing: border-box;
 	max-width: 1205px;
@@ -15,14 +25,8 @@
 	padding-left: 10px; 
 }
 
-.blog-container {
+.blog {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 	gap: 33px;
-}
-
-/* сброс стилей */
-body, header, h1 {
-	margin: 0;
-	padding: 0;
 }

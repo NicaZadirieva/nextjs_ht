@@ -1,4 +1,4 @@
-
+// TODO: нужно заменить на любой другой с получением постов
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function patchRequestUpdateLike(newLikeState: boolean, postId: number) {
 	// данный запрос закомментировала, так как присылает ошибку. всегда
