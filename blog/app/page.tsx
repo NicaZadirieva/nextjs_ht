@@ -19,6 +19,7 @@ export default async function Home() {
 						title={d.title}
 						readTime="3 Min Read"
 						slug={d.slug}
+						blogId={d.id}
 						thumbnail={d.thumbnail} />);
 				})
 			}

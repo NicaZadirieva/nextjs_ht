@@ -9,4 +9,5 @@ export interface BlogItemProps extends DetailedHTMLProps<HtmlHTMLAttributes<HTML
     readTime: string;
     thumbnail: string; 
     slug: string;
+    blogId: number;
 }

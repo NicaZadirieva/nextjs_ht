@@ -5,7 +5,7 @@ import { BlogItemProps } from './BlogItem.props';
 import ArrowIcon from './icon/icon_arrow.svg';
 import styles from './index.module.css';
 
-export const BlogItem = ({ className, slug, text, likeCounter, tag, createdAt, title, readTime, thumbnail, ...props}: BlogItemProps) => {
+export const BlogItem = ({ className, blogId,  text, likeCounter, tag, createdAt, title, readTime, thumbnail, ...props}: BlogItemProps) => {
 	return (
 		<div {...props} className={cn(styles.card, className)}>
 			<BlogImage thumbnail={thumbnail}/>
@@ -25,7 +25,7 @@ export const BlogItem = ({ className, slug, text, likeCounter, tag, createdAt, t
 				<footer className={styles.footer}>
 					<BlogReadTime readTime={readTime}/>
 
-					<Link href={`/blog/${slug}`} className={styles['post-link']}>Read Full
+					<Link href={`/blog/${blogId}`} className={styles['post-link']}>Read Full
 						<ArrowIcon/>
 					</Link>
 				</footer>
