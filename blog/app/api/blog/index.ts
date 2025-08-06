@@ -1,11 +1,16 @@
 
 export interface BlogItemResponse {
     title: string;
-    body: string;
+    content: string;
     id: number;
+	slug: string;
+	publishedAt: string;
+	category: string;
+	thumbnail: string;
+	image: string;
 }
 export async function generateBlogItems() {
-	const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+	const res = await fetch('https://jsonplaceholder.org/posts', {
 		next: {
 			revalidate: 10
 		}

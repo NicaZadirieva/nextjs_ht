@@ -1,13 +1,14 @@
 import { BlogCreatedAt, BlogImage, BlogLike, BlogReadTime, BlogTag } from '@/feature';
 import cn from 'classnames';
+import Link from 'next/link';
 import { BlogItemProps } from './BlogItem.props';
 import ArrowIcon from './icon/icon_arrow.svg';
 import styles from './index.module.css';
 
-export const BlogItem = ({className, text, likeCounter, tag, createdAt, title, readTime, postLink, mainPhotoLink, ...props}: BlogItemProps) => {
+export const BlogItem = ({ className, slug, text, likeCounter, tag, createdAt, title, readTime, thumbnail, ...props}: BlogItemProps) => {
 	return (
 		<div {...props} className={cn(styles.card, className)}>
-			<BlogImage mainPhotoLink={mainPhotoLink}/>
+			<BlogImage thumbnail={thumbnail}/>
 			<div className={styles.content}>
 				<header className={styles.header}>
 					<BlogTag tag={tag}/>
@@ -24,9 +25,9 @@ export const BlogItem = ({className, text, likeCounter, tag, createdAt, title, r
 				<footer className={styles.footer}>
 					<BlogReadTime readTime={readTime}/>
 
-					<a className={styles['post-link']} href={postLink}>Read Full
+					<Link href={`/blog/${slug}`} className={styles['post-link']}>Read Full
 						<ArrowIcon/>
-					</a>
+					</Link>
 				</footer>
 			</div>
 		</div>

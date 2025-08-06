@@ -1,8 +1,7 @@
-import Image from 'next/image';
 import { BlogImageProps } from './BlogImage.props';
 
-export const BlogImage = ({ mainPhotoLink }: BlogImageProps) => {
+export const BlogImage = ({ thumbnail }: BlogImageProps) => {
 	return (
-		<Image width={330} height={200} src={mainPhotoLink} alt='Изображение поста'/>
+		<img width={330} height={200} src={thumbnail.replace('&text=jsonplaceholder.org', '')} alt='Изображение поста'/>
 	);
 };

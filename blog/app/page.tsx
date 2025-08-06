@@ -13,13 +13,13 @@ export default async function Home() {
 				data.map((d: BlogItemResponse) => {
 					return (<BlogItem
 						key={d.id}
-						text={d.body}
-						createdAt={new Date('2021-09-25')}
-						tag='Frontend'
+						text={d.content}
+						createdAt={d.publishedAt}
+						tag={d.category}
 						title={d.title}
 						readTime="3 Min Read"
-						postLink="google.com"
-						mainPhotoLink='/Blog/blogPost.jpg' />);
+						slug={d.slug}
+						thumbnail={d.thumbnail} />);
 				})
 			}
 		</div>
