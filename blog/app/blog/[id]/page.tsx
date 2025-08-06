@@ -10,7 +10,7 @@ type Params = {
 export async function generateStaticParams(): Promise<Array<{ id: number }>> {
 	const posts = await generateBlogItems();
 	return posts.map((post: BlogItemResponse) => ({
-		id: post.id.toString()
+		id: post.id.toString() /**может возвращать только строки */
 	}));
 }
 export default async function BlogPost({ params }: Params) {
