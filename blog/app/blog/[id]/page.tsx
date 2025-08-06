@@ -19,6 +19,7 @@ export default async function BlogPost({ params }: Params) {
 	if (!res) {
 		return notFound();
 	}
+	// временная заглушка для контента страницы поста
 	return (
 		<>{res.content}</>
 	);
