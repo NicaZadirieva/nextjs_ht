@@ -1,3 +1,4 @@
+import { BlogItemResponse, generateBlogItems } from '@/app/api';
 import { generateBlogPostItem } from '@/app/api/blog/id';
 import { notFound } from 'next/navigation';
 
@@ -6,10 +7,14 @@ type Params = {
         id: number
     }
 }
-
+export async function generateStaticParams(): Promise<Array<{ id: number }>> {
+	const posts = await generateBlogItems();
+	return posts.map((post: BlogItemResponse) => ({
+		id: post.id.toString()
+	}));
+}
 export default async function BlogPost({ params }: Params) {
-	const { id } = await params;
-	const res = await generateBlogPostItem(id);
+	const res = await generateBlogPostItem(params.id);
 
 	if (!res) {
 		return notFound();
