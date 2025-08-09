@@ -1,16 +1,8 @@
-import { API } from '../api.constants';
+import { API } from '@/app/api/helpers';
+import { BlogPostResponse } from '../helpers/interfaces/BlogPostResponse.interface';
 
-export interface BlogItemResponse {
-    title: string;
-    content: string;
-    id: number;
-	slug: string;
-	publishedAt: string;
-	category: string;
-	thumbnail: string;
-	image: string;
-}
-export async function generateBlogItems() {
+
+export async function generateBlogItems(): Promise<BlogPostResponse | null> {
 	const res = await fetch(API.blog.getAll, {
 		next: {
 			revalidate: 10

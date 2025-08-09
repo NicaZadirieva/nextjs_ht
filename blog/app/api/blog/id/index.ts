@@ -1,16 +1,9 @@
-import { API } from '../../api.constants';
+import { API } from '@/app/api/helpers';
+import { BlogItemResponse } from '../../helpers/interfaces/BlogItemResponse.interface';
+import { BlogPostResponse } from '../../helpers/interfaces/BlogPostResponse.interface';
 
-export interface BlogPostResponse {
-	title: string;
-	content: string;
-	id: number;
-	slug: string;
-	publishedAt: string;
-	category: string;
-	thumbnail: string;
-	image: string;
-}
-export async function generateBlogPostItem(id: number) {
+
+export async function generateBlogPostItem(id: number): Promise<BlogPostResponse | null>{
 	const res = await fetch(`${API.blog.findOneById}${id}`
 	);
 	if (!res.ok) {
@@ -19,5 +12,5 @@ export async function generateBlogPostItem(id: number) {
 
 	const allData = await res.json();
 
-	return (allData as BlogPostResponse[]).filter((post) => post.id == id)[0];
+	return allData.filter((post: BlogItemResponse) => post.id == id)[0];
 }
