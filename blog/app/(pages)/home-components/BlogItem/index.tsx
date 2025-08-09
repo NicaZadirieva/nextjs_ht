@@ -1,16 +1,16 @@
-import { BlogCreatedAt, BlogLike, BlogReadTime, BlogTag } from '@/app/shared';
+import { BlogCreatedAt, BlogImage, BlogLike, BlogReadTime, BlogTag } from '@/app/shared';
 import cn from 'classnames';
 import Link from 'next/link';
 import { BlogItemProps } from './BlogItem.props';
 import ArrowIcon from './icon/icon_arrow.svg';
 import styles from './index.module.css';
-import { BlogImage } from './ui';
+
 
 
 export const BlogItem = ({ className, blogId,  text, likeCounter, tag, createdAt, title, readTime, thumbnail, ...props}: BlogItemProps) => {
 	return (
 		<div {...props} className={cn(styles.card, className)}>
-			<BlogImage thumbnail={thumbnail}/>
+			<BlogImage width={330} height={220} alt={title} thumbnail={thumbnail}/>
 			<div className={styles.content}>
 				<header className={styles.header}>
 					<BlogTag tag={tag}/>
