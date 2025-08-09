@@ -14,7 +14,8 @@ export async function generateStaticParams(): Promise<Array<{ id: number }>> {
 	}));
 }
 export default async function BlogPost({ params }: Params) {
-	const res = await generateBlogPostItem(params.id);
+	const { id } = await params;
+	const res = await generateBlogPostItem(id);
 
 	if (!res) {
 		return notFound();
