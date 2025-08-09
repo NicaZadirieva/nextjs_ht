@@ -1,16 +1,18 @@
-import { BlogItemResponse, generateBlogItems } from '@/app/api';
+
 import { BlogItem } from '@/entities';
 import { notFound } from 'next/navigation';
+import { generateBlogItems } from './api';
+import { BlogItemResponse } from './api/helpers';
 
 export default async function Home() {
 	const data = await generateBlogItems();
-	if (!data) {
+	if (!data?.blogItems) {
 		return notFound();
 	}
 	return (
 		<div className='blog'>
 			{
-				data.map((d: BlogItemResponse) => {
+				data?.blogItems?.map((d: BlogItemResponse) => {
 					return (<BlogItem
 						key={d.id}
 						text={d.content}

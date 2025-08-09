@@ -1,19 +1,17 @@
-import { BlogItemResponse, generateBlogItems } from '@/app/api';
-import { generateBlogPostItem } from '@/app/api/blog/id';
-import { notFound } from 'next/navigation';
 
-type Params = {
-    params: {
-        id: number
-    }
-}
-export async function generateStaticParams(): Promise<Array<{ id: number }>> {
+import { generateBlogItems, generateBlogPostItem } from '@/app/api/blog';
+import { BlogItemResponse } from '@/app/api/helpers';
+import { notFound } from 'next/navigation';
+import { BlogPostParams } from './BlogPostParams.interface';
+
+
+export async function generateStaticParams(): Promise<Array<{ id: string }> | undefined> {
 	const posts = await generateBlogItems();
-	return posts.map((post: BlogItemResponse) => ({
+	return posts?.blogItems?.map((post: BlogItemResponse) => ({
 		id: post.id.toString() /**может возвращать только строки */
 	}));
 }
-export default async function BlogPost({ params }: Params) {
+export default async function BlogPost({ params }: BlogPostParams) {
 	const { id } = await params;
 	const res = await generateBlogPostItem(id);
 
