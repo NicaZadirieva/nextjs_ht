@@ -1,0 +1,11 @@
+.blog-post-meta {
+	display: flex;
+	gap: 9px;
+	align-items: baseline;
+}
+
+.blog-post-meta-like {
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+}
