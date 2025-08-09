@@ -1,3 +1,4 @@
+import { API } from '../../api.constants';
 
 export interface BlogPostResponse {
 	title: string;
@@ -10,7 +11,7 @@ export interface BlogPostResponse {
 	image: string;
 }
 export async function generateBlogPostItem(id: number) {
-	const res = await fetch(`https://jsonplaceholder.org/posts?id=${id}`
+	const res = await fetch(`${API.blog.findOneById}${id}`
 	);
 	if (!res.ok) {
 		return null;

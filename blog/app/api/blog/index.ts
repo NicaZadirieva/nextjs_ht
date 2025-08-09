@@ -1,3 +1,4 @@
+import { API } from '../api.constants';
 
 export interface BlogItemResponse {
     title: string;
@@ -10,7 +11,7 @@ export interface BlogItemResponse {
 	image: string;
 }
 export async function generateBlogItems() {
-	const res = await fetch('https://jsonplaceholder.org/posts', {
+	const res = await fetch(API.blog.getAll, {
 		next: {
 			revalidate: 10
 		}
