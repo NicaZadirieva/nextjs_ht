@@ -1,3 +1,4 @@
+'use client';
 import { createContext, PropsWithChildren } from 'react';
 
 export type BASE_CONTEXT_TYPE = {

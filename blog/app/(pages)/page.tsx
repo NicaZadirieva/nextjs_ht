@@ -1,8 +1,8 @@
 
-import { BlogItem } from '@/entities';
 import { notFound } from 'next/navigation';
-import { generateBlogItems } from './api';
-import { BlogItemResponse } from './api/helpers';
+import { generateBlogItems } from '../api';
+import { BlogItemResponse } from '../api/helpers';
+import { BlogItem } from './home-components';
 
 export default async function Home() {
 	const data = await generateBlogItems();

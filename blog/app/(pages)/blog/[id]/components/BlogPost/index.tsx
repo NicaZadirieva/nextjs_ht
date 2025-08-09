@@ -1,7 +1,7 @@
 'use client';
 
-import { Like } from '@/feature';
 import { useState } from 'react';
+import { Like } from '../Like';
 
 export const BlogPost = () => {
 	const [postLike, setPostLike] = useState(false);

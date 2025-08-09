@@ -1,5 +1,5 @@
+import { Header, localFontImport } from '../shared';
 import './globals.css';
-import { Header, localFontImport } from './shared';
 
 export default function RootLayout({
 	children

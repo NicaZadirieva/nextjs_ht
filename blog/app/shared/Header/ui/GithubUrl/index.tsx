@@ -1,4 +1,4 @@
-import { BaseContext } from '@/app/context';
+import { BaseContext } from '@/app/shared/context';
 import { useContext } from 'react';
 import GithubIcon from './icon/icon_github.svg';
 

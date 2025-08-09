@@ -1,9 +1,9 @@
-import { BlogCreatedAt, BlogImage, BlogLike, BlogReadTime, BlogTag } from '@/feature';
 import cn from 'classnames';
 import Link from 'next/link';
 import { BlogItemProps } from './BlogItem.props';
 import ArrowIcon from './icon/icon_arrow.svg';
 import styles from './index.module.css';
+import { BlogCreatedAt, BlogImage, BlogLike, BlogReadTime, BlogTag } from './ui';
 
 export const BlogItem = ({ className, blogId,  text, likeCounter, tag, createdAt, title, readTime, thumbnail, ...props}: BlogItemProps) => {
 	return (
