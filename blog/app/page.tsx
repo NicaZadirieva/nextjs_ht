@@ -1,22 +1,30 @@
-import { BlogItem } from '@/entities';
 
-export default function Home() {
+import { BlogItem } from '@/entities';
+import { notFound } from 'next/navigation';
+import { generateBlogItems } from './api';
+import { BlogItemResponse } from './api/helpers';
+
+export default async function Home() {
+	const data = await generateBlogItems();
+	if (!data?.blogItems) {
+		return notFound();
+	}
 	return (
-		<div className='blog-container'>
+		<div className='blog'>
 			{
-				new Array(15).fill(0).map((val, i) => {
+				data?.blogItems?.map((d: BlogItemResponse) => {
 					return (<BlogItem
-						key={i}
-						text="The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning."
-						createdAt={new Date('2021-09-25')}
-						tag='Frontend'
-						title="Css Grid"
+						key={d.id}
+						text={d.content}
+						createdAt={d.publishedAt}
+						tag={d.category}
+						title={d.title}
 						readTime="3 Min Read"
-						postLink="google.com"
-						mainPhotoLink='/Blog/blogPost.jpg' />);
+						slug={d.slug}
+						blogId={d.id}
+						thumbnail={d.thumbnail} />);
 				})
 			}
-			
 		</div>
 	);
 }

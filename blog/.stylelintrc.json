@@ -10,6 +10,13 @@
     "rules": {
         "color-hex-length": "long",
         "@stylistic/color-hex-case": "upper",
-        "@stylistic/indentation": "tab"
+        "@stylistic/indentation": "tab",
+        "selector-class-pattern": [
+            "^([a-z][a-z0-9]*)(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
+            {
+                "message": "Используй BEM: .block__element--modifier (только маленькие буквы, цифры и дефисы)"
+            }
+        ]
+    
     }
 }

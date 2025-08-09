@@ -1,3 +1,3 @@
 export interface BlogImageProps {
-    mainPhotoLink: string;
+    thumbnail: string;
 }

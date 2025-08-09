@@ -4,9 +4,10 @@ export interface BlogItemProps extends DetailedHTMLProps<HtmlHTMLAttributes<HTML
     text: string;
     likeCounter?: number;
     tag: string;
-    createdAt: Date;
+    createdAt: string;
     title: string;
     readTime: string;
-    postLink: string;
-    mainPhotoLink: string; 
+    thumbnail: string; 
+    slug: string;
+    blogId: number;
 }
