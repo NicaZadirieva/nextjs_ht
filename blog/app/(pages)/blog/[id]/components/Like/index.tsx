@@ -1,10 +1,10 @@
 'use client';
+import { patchRequestUpdateLike } from '@/app/api/like/updateLike';
 import cs from 'classnames';
 import { useCallback, useState } from 'react';
-import { LikeProps } from './Like.props';
-import { patchRequestUpdateLike } from './api/updateLike';
 import PostLikeIcon from './icon/like-icon.svg';
 import styles from './index.module.css';
+import { LikeProps } from './Like.props';
 
 export const Like = (props: LikeProps) => {
 	const [liked, setLiked] = useState(props.liked);
