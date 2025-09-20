@@ -1,0 +1,26 @@
+.blog-post-body {
+	display: flex;
+	flex-direction: column;
+	gap: 65px;
+
+	max-width: 700px;
+	margin-top: 15px;
+}
+
+.blog-post-meta {
+	display: flex;
+	gap: 9px;
+	align-items: baseline;
+}
+
+.blog-post-meta-like {
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+.blog-post-body-like {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+}
