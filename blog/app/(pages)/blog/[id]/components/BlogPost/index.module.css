@@ -24,3 +24,41 @@
 	gap: 15px;
 	align-items: center;
 }
+
+.comment-author, .comment-author-email {
+	font-size: 12px;
+}
+
+.comment-author {
+	grid-area: author;
+	font-weight: 700;
+	color: var(--grey-dark);
+}
+
+.comment-author-email {
+	grid-area: email;
+	font-weight: 400;
+	color: var(--grey-middle);
+}
+
+.comment-body {
+	grid-area: comment;
+
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 28px;
+	color: var(--grey-dark);
+}
+
+.dot {
+	grid-area: dot;
+}
+
+.blog-post-body-comment {
+	display: grid;
+	grid-template-areas: 'author dot email .'
+		'comment comment comment comment';
+	grid-template-columns: auto auto auto auto;
+	column-gap: 15px;
+	align-items: center;
+}

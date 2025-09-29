@@ -28,6 +28,23 @@ export const BlogPost = ({ blogPostData, className, ...props }: BlogPostProps) =
 				<div className={styles['blog-post-body-like']}>
 					<span>Понравилось? Жми</span><Like width={20} height={20} liked={postLike} updateLike={(like) => { setPostLike(like); }} />
 				</div>
+				<div className={styles['blog-post-body-comments']}>
+					<BlogTitle title={'Комментарии'} />
+					<div className={styles['blog-post-body-comment']}>
+						<span className={styles['comment-author']}>
+							Василий Пупкин
+						</span>
+						<span className={styles['dot']}>·</span>
+						<span className={styles['comment-author-email']}>
+							pupkin@gmail.com
+						</span>
+						<div className={styles['comment-body']}>
+							Отличная статья,  но не хватает информации о том, как лучше реализовать на гридах более сложные
+							конструкции, например layout для интернет магазина.
+						</div>
+					</div>
+				</div>
+
 			</div>
 			
 			
