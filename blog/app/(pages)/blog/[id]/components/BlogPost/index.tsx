@@ -1,15 +1,16 @@
-'use client';
 
+import { generateCommentByBlogId } from '@/app/api/comment';
 import { BlogCreatedAt, BlogImage, BlogLike, BlogReadTime, BlogTag } from '@/app/shared';
 import cn from 'classnames';
-import { useState } from 'react';
-import { Like } from '../Like';
 import { BlogPostProps } from './BlogPost.props';
 import styles from './index.module.css';
+import { BlogComment } from './ui/BlogComment';
+import { BlogPostLike } from './ui/BlogPostLike';
 import { BlogTitle } from './ui/BlogTitle';
 
-export const BlogPost = ({ blogPostData, className, ...props }: BlogPostProps) => {
-	const [postLike, setPostLike] = useState(false);
+export const BlogPost = async ({ blogPostData, className, ...props }: BlogPostProps) => {
+	const res = await generateCommentByBlogId(blogPostData.id);
+
 	return (
 		<div {...props} className={cn(className, styles['blog-post'])}>
 			<BlogTitle title={blogPostData.title}/>
@@ -25,9 +26,19 @@ export const BlogPost = ({ blogPostData, className, ...props }: BlogPostProps) =
 			<div className={styles['blog-post-body']}>
 				<BlogImage width={687} height={440} alt={blogPostData.title} thumbnail={blogPostData.thumbnail /**почему-то только thumbnail показывается, а img - нет */} />
 				<div dangerouslySetInnerHTML={{ __html: blogPostData.content}}/>
-				<div className={styles['blog-post-body-like']}>
-					<span>Понравилось? Жми</span><Like width={20} height={20} liked={postLike} updateLike={(like) => { setPostLike(like); }} />
+				<BlogPostLike/>
+				<div className={styles['blog-post-body-comments']}>
+					<BlogTitle title={'Комментарии'} />
+					{res.map((comment) => {
+						return (
+							<BlogComment key={comment.id} authorId={comment.userId} className={styles['blog-post-body-comment']} commentBody={comment.comment}/>
+						);
+
+					})}
+
+					
 				</div>
+
 			</div>
 			
 			

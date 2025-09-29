@@ -1,0 +1,5 @@
+.blog-post-body-like {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+}
