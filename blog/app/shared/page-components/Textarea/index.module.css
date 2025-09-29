@@ -1,0 +1,23 @@
+.textarea {
+	resize: none;
+
+	height: 106px;
+	padding: 15px;
+	border: none;
+	border-radius: 8px;
+
+	font-family: inherit;
+
+
+	opacity: .84;
+	outline: 1px solid var(--grey-blind);
+}
+
+.textarea:focus {
+	outline: 1px solid var(--grey-dark);
+}
+
+.textarea::placeholder {
+	font-size: 15px;
+	color: var(--grey-blind);
+}
