@@ -32,9 +32,9 @@ export const BlogPost = ({ blogPostData, className, ...props }: BlogPostProps) =
 				<div className={styles['blog-post-body-comments']}>
 					<BlogTitle title={'Комментарии'} />
 
-					<BlogComment commentAuthor='Василий Пупкин' commentBody='Отличная статья,  но не хватает информации о том, как лучше реализовать на гридах более сложные
+					<BlogComment className={styles['blog-post-body-comment']} commentAuthor='Василий Пупкин' commentBody='Отличная статья,  но не хватает информации о том, как лучше реализовать на гридах более сложные
 							конструкции, например layout для интернет магазина.' emailAuthor='pupkin@gmail.com' />
-					
+
 				</div>
 
 			</div>
