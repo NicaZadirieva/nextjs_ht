@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Like } from '../Like';
 import { BlogPostProps } from './BlogPost.props';
 import styles from './index.module.css';
+import { BlogComment } from './ui/BlogComment';
 import { BlogTitle } from './ui/BlogTitle';
 
 export const BlogPost = ({ blogPostData, className, ...props }: BlogPostProps) => {
@@ -30,19 +31,10 @@ export const BlogPost = ({ blogPostData, className, ...props }: BlogPostProps) =
 				</div>
 				<div className={styles['blog-post-body-comments']}>
 					<BlogTitle title={'Комментарии'} />
-					<div className={styles['blog-post-body-comment']}>
-						<span className={styles['comment-author']}>
-							Василий Пупкин
-						</span>
-						<span className={styles['dot']}>·</span>
-						<span className={styles['comment-author-email']}>
-							pupkin@gmail.com
-						</span>
-						<div className={styles['comment-body']}>
-							Отличная статья,  но не хватает информации о том, как лучше реализовать на гридах более сложные
-							конструкции, например layout для интернет магазина.
-						</div>
-					</div>
+
+					<BlogComment commentAuthor='Василий Пупкин' commentBody='Отличная статья,  но не хватает информации о том, как лучше реализовать на гридах более сложные
+							конструкции, например layout для интернет магазина.' emailAuthor='pupkin@gmail.com' />
+					
 				</div>
 
 			</div>
