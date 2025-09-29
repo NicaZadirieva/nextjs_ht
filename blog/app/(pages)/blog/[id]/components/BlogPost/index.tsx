@@ -5,6 +5,7 @@ import cn from 'classnames';
 import { BlogPostProps } from './BlogPost.props';
 import styles from './index.module.css';
 import { BlogComment } from './ui/BlogComment';
+import { BlogForm } from './ui/BlogForm';
 import { BlogPostLike } from './ui/BlogPostLike';
 import { BlogTitle } from './ui/BlogTitle';
 
@@ -29,7 +30,7 @@ export const BlogPost = async ({ blogPostData, className, ...props }: BlogPostPr
 				<BlogPostLike/>
 				<div className={styles['blog-post-body-comments']}>
 					<BlogTitle title={'Комментарии'} />
-					{res.map((comment) => {
+					{res?.map((comment) => {
 						return (
 							<BlogComment key={comment.id} authorId={comment.userId} className={styles['blog-post-body-comment']} commentBody={comment.comment}/>
 						);
@@ -38,6 +39,7 @@ export const BlogPost = async ({ blogPostData, className, ...props }: BlogPostPr
 
 					
 				</div>
+				<BlogForm/>
 
 			</div>
 			
