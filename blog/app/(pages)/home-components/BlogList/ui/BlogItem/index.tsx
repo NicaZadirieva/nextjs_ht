@@ -1,0 +1,53 @@
+// BlogItem.tsx
+import { BlogCreatedAt, BlogImage, BlogLike, BlogReadTime, BlogTag } from '@/app/shared';
+import cn from 'classnames';
+import { motion } from 'motion/react';
+import Link from 'next/link';
+import { forwardRef } from 'react';
+import { BlogItemProps } from './BlogItem.props';
+import ArrowIcon from './icon/icon_arrow.svg';
+import styles from './index.module.css';
+
+const BlogItemComponent = forwardRef<HTMLDivElement, BlogItemProps>(({
+	className,
+	blogId,
+	text,
+	likeCounter,
+	tag,
+	createdAt,
+	title,
+	readTime,
+	thumbnail,
+	...props
+}, ref) => {
+	return (
+		<div {...props} ref={ref} className={cn(styles.card, className)}>
+			<BlogImage width={330} height={220} alt={title} thumbnail={thumbnail} />
+			<div className={styles.content}>
+				<header className={styles.header}>
+					<BlogTag tag={tag} />
+					<span>·</span>
+					<BlogCreatedAt createdAt={createdAt} />
+					<BlogLike likeCounter={likeCounter} />
+				</header>
+
+				<main className={styles.main}>
+					<h2 className={styles.title}>{title}</h2>
+					<p className={styles.text}>{text}</p>
+				</main>
+
+				<footer className={styles.footer}>
+					<BlogReadTime readTime={readTime} />
+					<Link href={`/blog/${blogId}`} className={styles['post-link']}>
+						Read Full
+						<ArrowIcon />
+					</Link>
+				</footer>
+			</div>
+		</div>
+	);
+});
+
+BlogItemComponent.displayName = 'BlogItemComponent';
+
+export const BlogItem = motion.create(BlogItemComponent);
