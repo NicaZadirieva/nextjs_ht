@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, HtmlHTMLAttributes } from 'react';
 
-export interface BlogItemProps extends DetailedHTMLProps<HtmlHTMLAttributes<HTMLDivElement>, HTMLDivElement>{
+export interface BlogItemProps extends DetailedHTMLProps<HtmlHTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     text: string;
     likeCounter?: number;
     tag: string;
